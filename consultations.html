@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=consult-audit-20260813" />
+  <link rel="stylesheet" href="styles.css?v=cal-embed-20260813" />
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="page-inner" data-page="consultations">
@@ -126,16 +126,11 @@
             <tr><td>2-Hour Studio Intensive</td><td>$300</td></tr>
           </tbody>
         </table>
-        <p class="consult-pay-note">Paid sessions require payment in Calendly before the booking is confirmed.</p>
+        <p class="consult-pay-note">Paid sessions require payment in Cal before the booking is confirmed.</p>
       </div>
 
-      <div class="calendly-wrap reveal" id="calendly">
-        <div
-          class="calendly-inline-widget"
-          data-url="https://calendly.com/brandonfonville/studio-consultations?hide_gdpr_banner=1&amp;primary_color=1a1a1a"
-          style="min-width:320px;height:780px;"
-          title="Book a Studio Consultation"
-        ></div>
+      <div class="cal-wrap reveal" id="book-cal">
+        <div id="my-cal-inline-creative-cons" class="cal-inline" title="Book a Studio Consultation"></div>
       </div>
     </section>
   </main>
@@ -160,7 +155,48 @@
     </div>
   </footer>
 
-  <script src="script.js?v=consult-audit-20260813"></script>
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script src="script.js?v=cal-embed-20260813"></script>
+  <script type="text/javascript">
+    (function (C, A, L) {
+      var p = function (a, ar) { a.q.push(ar); };
+      var d = C.document;
+      C.Cal = C.Cal || function () {
+        var cal = C.Cal;
+        var ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          var api = function () { p(api, arguments); };
+          var namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else {
+            p(cal, ar);
+          }
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "creative-cons", { origin: "https://cal.com" });
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+    Cal.ns["creative-cons"]("inline", {
+      elementOrSelector: "#my-cal-inline-creative-cons",
+      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+      calLink: "brandonfonville/creative-cons",
+    });
+    Cal.ns["creative-cons"]("ui", {
+      hideEventTypeDetails: false,
+      layout: "month_view",
+    });
+  </script>
 </body>
 </html>
