@@ -462,6 +462,21 @@ initHomeFlipper();
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("formStatus");
 const submitBtn = document.getElementById("submitBtn");
+const packageSelect = document.getElementById("package");
+
+(function preselectPackageFromQuery() {
+  if (!packageSelect) return;
+  try {
+    const wanted = new URLSearchParams(window.location.search).get("package");
+    if (!wanted) return;
+    const match = [...packageSelect.options].find(
+      (opt) => opt.value === wanted || opt.textContent === wanted
+    );
+    if (match) packageSelect.value = match.value;
+  } catch (_) {
+    /* ignore */
+  }
+})();
 
 function setStatus(message, kind) {
   if (!statusEl) return;

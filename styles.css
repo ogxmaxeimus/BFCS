@@ -953,6 +953,45 @@ a { color: inherit; text-decoration: none; }
 .flagship-head { margin-top: 0; padding-top: 0; border-top: 0; }
 .package-grid-web, .package-grid-flagship, .package-grid-retainer { grid-template-columns: repeat(3, 1fr); }
 
+.consult-block,
+.audit-block {
+  margin-bottom: 8px;
+}
+.consult-block .consult-table { margin-bottom: 22px; }
+.consult-cta {
+  display: inline-block;
+  min-width: min(100%, 280px);
+  text-align: center;
+}
+.packages-subhead .section-note {
+  margin-top: 10px;
+  color: var(--muted);
+  max-width: 52ch;
+}
+.audit-package {
+  max-width: 42rem;
+  border-top: 1px solid var(--text);
+  padding-top: 28px;
+}
+.audit-desc {
+  color: var(--text-2);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  max-width: 52ch;
+}
+.audit-price-again {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+.audit-package .package-cta {
+  align-self: flex-start;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
 .addons {
   margin-top: 36px; border-top: 1px solid var(--line); padding: 32px 0;
 }
@@ -1154,28 +1193,38 @@ body.modal-open { overflow: hidden; }
   letter-spacing: 0.02em;
 }
 .book-consult .contact-sub { margin-bottom: 24px; }
-.cal-embed {
-  width: 100%;
-  min-height: 680px;
-  height: min(78vh, 780px);
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--text);
+.book-consult-table {
+  margin: 0 auto 28px;
+  max-width: 40rem;
   text-align: left;
 }
-.cal-embed iframe {
-  width: 100%;
-  min-height: 680px;
-  border: 0;
+.featured-cta {
+  background: var(--text);
+  color: var(--bg);
+  border-color: transparent;
 }
-@media (max-width: 640px) {
-  .cal-embed {
-    min-height: 600px;
-    height: min(85vh, 720px);
-  }
-  .cal-embed iframe { min-height: 600px; }
+.featured-cta:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+}
+.consult-pay-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0 0 8px;
+  max-width: 48ch;
+}
+.calendly-wrap {
+  margin-top: clamp(28px, 5vw, 48px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow: hidden;
+}
+.calendly-inline-widget {
+  width: 100%;
+}
+.consultations-page {
+  margin-bottom: clamp(48px, 8vw, 96px);
 }
 
 /* Footer */

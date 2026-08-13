@@ -35,6 +35,11 @@
   status = 200
 
 [[redirects]]
+  from = "/consultations"
+  to = "/consultations.html"
+  status = 200
+
+[[redirects]]
   from = "/works"
   to = "/works.html"
   status = 200
@@ -71,6 +76,11 @@
   status = 301
 
 [[redirects]]
+  from = "/consultations.html"
+  to = "/consultations"
+  status = 301
+
+[[redirects]]
   from = "/works.html"
   to = "/works"
   status = 301
@@ -97,7 +107,7 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; form-action 'self' https://formspree.io; frame-ancestors 'none'; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; form-action 'self' https://formspree.io https://calendly.com https://*.calendly.com; frame-ancestors 'none'; frame-src https://calendly.com https://*.calendly.com; child-src https://calendly.com https://*.calendly.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com data: https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com; script-src 'self' 'unsafe-inline' https://assets.calendly.com; connect-src 'self' https://formspree.io https://calendly.com https://*.calendly.com https://assets.calendly.com"
 
 [[headers]]
   for = "/*.html"
