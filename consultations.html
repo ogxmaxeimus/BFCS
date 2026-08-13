@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=cal-embed-20260813" />
+  <link rel="stylesheet" href="styles.css?v=cal-sessions-20260813" />
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="page-inner" data-page="consultations">
@@ -116,21 +116,32 @@
 
     <section class="consultations-page" id="book">
       <div class="consult-block reveal">
-        <table class="addon-table consult-table">
+        <p class="consult-select-hint">Select a session, then pick a time below. Paid sessions collect payment in Cal before confirmation.</p>
+        <table class="addon-table consult-table" id="consultSessions">
           <thead><tr><th>Session</th><th>Investment</th></tr></thead>
           <tbody>
-            <tr><td>15-Minute Discovery Call</td><td>Free</td></tr>
-            <tr><td>30-Minute Design Consultation</td><td>$75</td></tr>
-            <tr><td>60-Minute Design Strategy Session</td><td>$150</td></tr>
-            <tr><td>90-Minute Design Intensive</td><td>$225</td></tr>
-            <tr><td>2-Hour Studio Intensive</td><td>$300</td></tr>
+            <tr role="button" tabindex="0" data-cal-link="brandonfonville/15min" aria-pressed="false">
+              <td>15-Minute Discovery Call</td><td>Free</td>
+            </tr>
+            <tr class="is-selected" role="button" tabindex="0" data-cal-link="brandonfonville/30min" aria-pressed="true">
+              <td>30-Minute Design Consultation</td><td>$75</td>
+            </tr>
+            <tr role="button" tabindex="0" data-cal-link="brandonfonville/design-strategy-session-60-min" aria-pressed="false">
+              <td>60-Minute Design Strategy Session</td><td>$150</td>
+            </tr>
+            <tr role="button" tabindex="0" data-cal-link="brandonfonville/design-intensive-90-min" aria-pressed="false">
+              <td>90-Minute Design Intensive</td><td>$225</td>
+            </tr>
+            <tr role="button" tabindex="0" data-cal-link="brandonfonville/studio-intensive-2-hours" aria-pressed="false">
+              <td>2-Hour Studio Intensive</td><td>$300</td>
+            </tr>
           </tbody>
         </table>
-        <p class="consult-pay-note">Paid sessions require payment in Cal before the booking is confirmed.</p>
+        <p class="consult-pay-note">Stripe checkout opens after you choose a time for any paid session.</p>
       </div>
 
       <div class="cal-wrap reveal" id="book-cal">
-        <div id="my-cal-inline-creative-cons" class="cal-inline" title="Book a Studio Consultation"></div>
+        <div id="my-cal-inline-consult" class="cal-inline" title="Book a consultation"></div>
       </div>
     </section>
   </main>
@@ -155,7 +166,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=cal-embed-20260813"></script>
+  <script src="script.js?v=cal-sessions-20260813"></script>
   <script type="text/javascript">
     (function (C, A, L) {
       var p = function (a, ar) { a.q.push(ar); };
@@ -185,18 +196,75 @@
         p(cal, ar);
       };
     })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "creative-cons", { origin: "https://cal.com" });
-    Cal.config = Cal.config || {};
-    Cal.config.forwardQueryParams = true;
-    Cal.ns["creative-cons"]("inline", {
-      elementOrSelector: "#my-cal-inline-creative-cons",
-      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
-      calLink: "brandonfonville/creative-cons",
-    });
-    Cal.ns["creative-cons"]("ui", {
-      hideEventTypeDetails: false,
-      layout: "month_view",
-    });
+
+    (function () {
+      var NS = "consult";
+      var DEFAULT_LINK = "brandonfonville/30min";
+      var mountCount = 0;
+
+      Cal("init", NS, { origin: "https://cal.com" });
+      Cal.config = Cal.config || {};
+      Cal.config.forwardQueryParams = true;
+
+      function mountCal(calLink) {
+        var host = document.querySelector("#my-cal-inline-consult");
+        if (!host || !calLink) return;
+        mountCount += 1;
+        var ns = NS + "-" + mountCount;
+        host.innerHTML = "";
+        host.setAttribute("data-cal-link", calLink);
+        Cal("init", ns, { origin: "https://cal.com" });
+        Cal.ns[ns]("inline", {
+          elementOrSelector: "#my-cal-inline-consult",
+          config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+          calLink: calLink,
+        });
+        Cal.ns[ns]("ui", {
+          hideEventTypeDetails: false,
+          layout: "month_view",
+        });
+      }
+
+      function selectRow(row, opts) {
+        if (!row) return;
+        var table = document.getElementById("consultSessions");
+        if (!table) return;
+        table.querySelectorAll("tbody tr[data-cal-link]").forEach(function (tr) {
+          var on = tr === row;
+          tr.classList.toggle("is-selected", on);
+          tr.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        mountCal(row.getAttribute("data-cal-link"));
+        if (opts && opts.scroll) {
+          var calWrap = document.getElementById("book-cal");
+          if (calWrap) calWrap.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }
+
+      var table = document.getElementById("consultSessions");
+      if (table) {
+        table.addEventListener("click", function (e) {
+          var row = e.target.closest("tr[data-cal-link]");
+          if (row) selectRow(row, { scroll: true });
+        });
+        table.addEventListener("keydown", function (e) {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          var row = e.target.closest("tr[data-cal-link]");
+          if (!row) return;
+          e.preventDefault();
+          selectRow(row, { scroll: true });
+        });
+      }
+
+      var initial =
+        (table && table.querySelector("tbody tr.is-selected[data-cal-link]")) ||
+        (table && table.querySelector('tbody tr[data-cal-link="' + DEFAULT_LINK + '"]'));
+      if (initial) {
+        selectRow(initial);
+      } else {
+        mountCal(DEFAULT_LINK);
+      }
+    })();
   </script>
 </body>
 </html>
