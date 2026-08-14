@@ -58,6 +58,15 @@ const menuPanel = menu?.querySelector(".menu-panel");
 const menuInner = menu?.querySelector(".menu-inner");
 const menuBottom = menu?.querySelector(".menu-bottom");
 const menuBottomTrack = menu?.querySelector(".menu-bottom-track");
+const menuReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* jamarea.com uses expo.out (~cubic-bezier(0.19,1,0.22,1)) at ~0.5–1.25s.
+   Lower lerp = longer, softer settle (closer to their text-hover 1.25s feel). */
+const MENU_BOTTOM_LERP = 0.048;
+let menuBottomCurrentX = 0;
+let menuBottomTargetX = 0;
+let menuBottomRaf = 0;
+let menuUnderlineEl = null;
+let menuUnderlineIndex = null;
 
 /**
  * Uniformly scale the content-sized menu composition to fit the viewport.
@@ -140,23 +149,84 @@ function menuBottomClampX(x) {
   return Math.min(maxX, Math.max(minX, x));
 }
 
+function tickMenuBottomScroll() {
+  menuBottomRaf = 0;
+  if (!menuBottomTrack) return;
+  const diff = menuBottomTargetX - menuBottomCurrentX;
+  if (Math.abs(diff) < 0.2) {
+    menuBottomCurrentX = menuBottomTargetX;
+    menuBottomTrack.style.setProperty("--menu-bottom-x", `${menuBottomCurrentX}px`);
+    return;
+  }
+  menuBottomCurrentX += diff * MENU_BOTTOM_LERP;
+  menuBottomTrack.style.setProperty("--menu-bottom-x", `${menuBottomCurrentX}px`);
+  menuBottomRaf = requestAnimationFrame(tickMenuBottomScroll);
+}
+
 function setMenuBottomX(x, instant) {
   if (!menuBottomTrack) return;
   const clamped = menuBottomClampX(x);
-  if (instant) {
-    const prev = menuBottomTrack.style.transition;
-    menuBottomTrack.style.transition = "none";
+  menuBottomTargetX = clamped;
+  if (instant || menuReduceMotion) {
+    if (menuBottomRaf) {
+      cancelAnimationFrame(menuBottomRaf);
+      menuBottomRaf = 0;
+    }
+    menuBottomCurrentX = clamped;
     menuBottomTrack.style.setProperty("--menu-bottom-x", `${clamped}px`);
-    // Force reflow so the next transition animates from this value.
-    void menuBottomTrack.offsetWidth;
-    menuBottomTrack.style.transition = prev || "";
-  } else {
-    menuBottomTrack.style.setProperty("--menu-bottom-x", `${clamped}px`);
+    return;
   }
+  if (!menuBottomRaf) menuBottomRaf = requestAnimationFrame(tickMenuBottomScroll);
 }
 
 function resetMenuBottomScroll(instant) {
   setMenuBottomX(0, instant);
+}
+
+function ensureMenuUnderlineEl() {
+  if (!menuBottomTrack || menuUnderlineEl) return menuUnderlineEl;
+  menuUnderlineEl = document.createElement("div");
+  menuUnderlineEl.className = "menu-underline-el";
+  menuUnderlineEl.setAttribute("aria-hidden", "true");
+  return menuUnderlineEl;
+}
+
+function placeMenuUnderline(page, leaving) {
+  if (!menuBottomTrack || menuReduceMotion) return;
+  const el = ensureMenuUnderlineEl();
+  if (!el) return;
+
+  const pages = [...menuBottomTrack.querySelectorAll(".menu-page")];
+  const index = page ? pages.indexOf(page) : -1;
+  if (!leaving && index === menuUnderlineIndex && el.parentElement) return;
+
+  const slot =
+    (page && page.querySelector(".menu-underline")) ||
+    menuBottomTrack.querySelector(".menu-page.is-current .menu-underline") ||
+    menuBottomTrack.querySelector(".menu-page .menu-underline");
+  if (!slot) return;
+
+  const first = el.isConnected ? el.getBoundingClientRect() : null;
+  slot.appendChild(el);
+  el.style.transition = "none";
+  el.style.transform = "none";
+  el.style.width = "100%";
+  el.style.left = "0";
+  el.style.top = "0";
+
+  if (!first || leaving === undefined) {
+    menuUnderlineIndex = index >= 0 ? index : menuUnderlineIndex;
+    return;
+  }
+
+  const last = el.getBoundingClientRect();
+  const dx = first.left - last.left;
+  const sx = last.width ? first.width / last.width : 1;
+  el.style.transform = `translateX(${dx}px) scaleX(${sx || 1})`;
+  void el.offsetWidth;
+  el.style.transition = "transform 0.85s cubic-bezier(0.19, 1, 0.22, 1)";
+  el.style.transform = "none";
+  menuUnderlineIndex = leaving ? null : index;
 }
 
 function focusMenuBottomPage(page, instant) {
@@ -177,28 +247,32 @@ function focusMenuBottomPage(page, instant) {
   // Last title (“Start a Project”): flush the track end so the full phrase shows.
   if (isLast && tw > bw) {
     setMenuBottomX(bw - tw, instant);
-    return;
-  }
-
-  // Prefer centering the hovered title in the strip.
-  let x = bw / 2 - pageCenter;
-
-  // Keep the full label in view when it fits.
-  if (pageWidth <= bw - pad * 2) {
-    const minXForPage = bw - pad - pageRight;
-    const maxXForPage = pad - pageLeft;
-    x = Math.min(maxXForPage, Math.max(minXForPage, x));
   } else {
-    // Label wider than strip: pin its start into view.
-    x = pad - pageLeft;
+    // Prefer centering the hovered title in the strip.
+    let x = bw / 2 - pageCenter;
+
+    // Keep the full label in view when it fits.
+    if (pageWidth <= bw - pad * 2) {
+      const minXForPage = bw - pad - pageRight;
+      const maxXForPage = pad - pageLeft;
+      x = Math.min(maxXForPage, Math.max(minXForPage, x));
+    } else {
+      // Label wider than strip: pin its start into view.
+      x = pad - pageLeft;
+    }
+
+    setMenuBottomX(x, instant);
   }
 
-  // Clamp via setMenuBottomX (allows x=0 full left and full right for last item).
-  setMenuBottomX(x, instant);
+  placeMenuUnderline(page, false);
 }
 
 function initMenuBottomScroll() {
   if (!menuBottom || !menuBottomTrack) return;
+
+  ensureMenuUnderlineEl();
+  const current = menuBottomTrack.querySelector(".menu-page.is-current");
+  if (current) placeMenuUnderline(current);
 
   menuBottomTrack.querySelectorAll(".menu-page").forEach((page) => {
     page.addEventListener("mouseenter", () => focusMenuBottomPage(page, false));
@@ -206,7 +280,12 @@ function initMenuBottomScroll() {
   });
 
   // Leave the strip → return to the left edge (Home), not the current page.
-  menuBottom.addEventListener("mouseleave", () => resetMenuBottomScroll(false));
+  menuBottom.addEventListener("mouseleave", () => {
+    resetMenuBottomScroll(false);
+    const home = menuBottomTrack.querySelector(".menu-page[data-menu-page='home']") ||
+      menuBottomTrack.querySelector(".menu-page.is-current");
+    if (home) placeMenuUnderline(home, true);
+  });
 }
 
 function openMenu() {
@@ -217,6 +296,10 @@ function openMenu() {
   document.documentElement.classList.add("menu-open");
   document.body.classList.add("menu-open");
   resetMenuBottomScroll(true);
+  const current =
+    menuBottomTrack?.querySelector(".menu-page.is-current") ||
+    menuBottomTrack?.querySelector(".menu-page");
+  if (current) placeMenuUnderline(current);
   scheduleMenuFit();
 }
 function closeMenu() {
