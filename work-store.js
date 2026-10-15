@@ -607,6 +607,97 @@
         },
       ],
     },
+
+    {
+      id: "ashgrove",
+      title: "Ashgrove",
+      titleSub: "Custom Homes",
+      meta: "Concept: custom home builder website",
+      tag: "Web concept",
+      caseStudy: {
+        eyebrow: "Case study: Concept",
+        sub: "A design-build website concept for custom home builders, made to turn high-value homeowners into booked site walks.",
+        facts: [
+          { label: "Role", value: "Lead Designer & Front-end Developer" },
+          { label: "Team", value: "Independent concept" },
+          { label: "Tools", value: "HTML, CSS, JS, Netlify" },
+          { label: "Type", value: "Concept: marketing website, desktop and mobile" },
+        ],
+        link: { href: "/concepts/custom-home-builder/", label: "View the live concept" },
+        overview:
+          "Ashgrove Custom Homes is a fictional Texas Hill Country design-build firm, created for Brandon Fonville Creative Studio to show custom home builders what their website could be. I owned the concept end to end: positioning, information architecture, copy, the visual system, and a hand-built, responsive front end with no page builder or template behind it.",
+        sections: [
+          {
+            heading: "The challenge",
+            body: "Custom builders sell a seven-figure promise before a single wall exists. Most builder sites bury that promise under stock galleries, vague claims, and a contact form that feels like a cold quote request. Homeowners comparing builders want proof of craft, a clear process, and confidence about cost, and they want it quickly on a phone.",
+          },
+          {
+            heading: "The approach",
+            body: "I structured the page the way a good first meeting goes: show the work, explain how you build, answer the money question, then invite a site walk. Trust signals sit right under the hero, services read as three clear paths (design-build, build on your plans, whole-home transformations), and a five-step process gives timelines in weeks and months instead of promises. Every section ends near a call to action, so a ready buyer never has to hunt.",
+          },
+          {
+            heading: "Design system",
+            body: "Warm limestone and paper neutrals, near-black charcoal, and a single clay accent, chosen to feel like natural building materials rather than tech. Fraunces carries the headlines with italic accent words for an editorial, high-touch voice, while Manrope keeps body copy and UI crisp. Large rounded image frames, generous spacing, and restrained motion (masked headline reveals, clip-path image reveals, light parallax) let the photography do the selling.",
+          },
+          {
+            heading: "Key features",
+            list: [
+              "Full-bleed hero with a live availability card that adds gentle urgency",
+              "Filterable homes gallery (Modern, Ranch, Interiors) with specs on every card",
+              "Scroll-linked five-step process with real timelines",
+              "Founder quote and construction spec list that make craft tangible",
+              "Testimonial slider, a cost-first FAQ, and a site walk form with budget chips",
+              "Fully responsive, reduced-motion aware, and fast: plain HTML, CSS, and JS",
+            ],
+          },
+        ],
+        outcomeHeading: "Outcome & what it shows",
+        outcome:
+          "The concept shows a builder how their site can qualify leads, not just collect them. Budget and stage fields pre-sort inquiries, the FAQ handles cost and change-order objections up front, and the gallery and process sell the experience before the first call. It is a ready starting point for a real firm, adaptable to their homes, region, and brand. Ashgrove is fictional and not affiliated with any real builder.",
+      },
+      items: [
+        {
+          category: "Digital",
+          src: "assets/work/ag-home.jpg",
+          webp: "assets/work/ag-home.webp",
+          alt: "Ashgrove Custom Homes concept homepage with a dusk exterior hero and serif headline",
+          width: 1536,
+          height: 1024,
+          title: "Homepage",
+          span: "Concept • web",
+        },
+        {
+          category: "Digital",
+          src: "assets/work/ag-homes.jpg",
+          webp: "assets/work/ag-homes.webp",
+          alt: "Ashgrove filterable homes gallery with modern and ranch project cards",
+          width: 1536,
+          height: 1024,
+          title: "Homes Gallery",
+          span: "Concept • portfolio",
+        },
+        {
+          category: "Digital",
+          src: "assets/work/ag-process.jpg",
+          webp: "assets/work/ag-process.webp",
+          alt: "Ashgrove five-step build process on a dark section with timeline",
+          width: 1536,
+          height: 1024,
+          title: "Process",
+          span: "Concept • UX",
+        },
+        {
+          category: "Digital",
+          src: "assets/work/ag-mobile.jpg",
+          webp: "assets/work/ag-mobile.webp",
+          alt: "Ashgrove mobile screens showing the hero, homes gallery, and site walk contact section",
+          width: 1536,
+          height: 1024,
+          title: "Mobile",
+          span: "Concept • responsive",
+        },
+      ],
+    },
   ];
 
   function clone(value) {
@@ -704,6 +795,9 @@
         })),
         overview: project.caseStudy.overview,
         outcome: project.caseStudy.outcome,
+        sections: project.caseStudy.sections || [],
+        outcomeHeading: project.caseStudy.outcomeHeading || "",
+        link: project.caseStudy.link || null,
       };
     });
     return map;

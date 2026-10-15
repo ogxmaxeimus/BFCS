@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashgrove Custom Homes | Hill Country Custom Home Builder (Concept)</title>
+  <meta name="description" content="Ashgrove Custom Homes is a fictional Texas Hill Country custom home builder. A website concept by Brandon Fonville Creative Studio." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#f2eee6" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171512'/%3E%3Cpath d='M8 22 16 9l8 13' fill='none' stroke='%23c2683c' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=75" fetchpriority="high" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Ashgrove Custom Homes, back to top">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25 16 7l11 18" /><path d="M11 25v-6h10v6" /></svg>
+        <span class="brand__name">Ashgrove<small>Custom Homes</small></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#homes">Homes</a>
+        <a href="#process">Process</a>
+        <a href="#stories">Stories</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="nav__phone" href="tel:+15125550186">(512) 555-0186</a>
+        <a class="btn btn--sm btn--dark" href="#contact">Plan your build</a>
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle>
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" data-menu hidden>
+      <a href="#services">Services</a>
+      <a href="#homes">Homes</a>
+      <a href="#process">Process</a>
+      <a href="#stories">Stories</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--dark" href="#contact">Plan your build</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero__media" data-parallax="0.18">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=75" alt="Modern custom home with dark cladding, warm interior light and a manicured lawn" width="2000" height="1333" fetchpriority="high" />
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="container hero__content">
+        <p class="eyebrow eyebrow--light" data-reveal>Custom homes &middot; Texas Hill Country</p>
+        <h1 class="hero__title" data-split>
+          <span>Homes built</span>
+          <span>around the way</span>
+          <span><em>you live.</em></span>
+        </h1>
+        <div class="hero__row">
+          <p class="hero__lede" data-reveal style="--d:.5s">Ashgrove designs and builds one-of-a-kind homes on your land, with a fixed-price contract, a single accountable team, and craft you can feel in every joint.</p>
+          <div class="hero__ctas" data-reveal style="--d:.6s">
+            <a class="btn btn--light" href="#contact">Start your home <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn--ghost" href="#homes">See our homes</a>
+          </div>
+        </div>
+      </div>
+      <aside class="hero__card" data-reveal style="--d:.8s">
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <strong>Now scheduling 2027 starts</strong>
+          <span>4 build slots remaining</span>
+        </div>
+      </aside>
+      <a class="hero__scroll" href="#studio" aria-label="Scroll to learn more"><span></span></a>
+    </section>
+
+    <!-- Trust marquee -->
+    <div class="marquee" aria-label="Highlights">
+      <div class="marquee__track">
+        <ul>
+          <li>Fixed-price contracts</li><li>180+ homes delivered</li><li>18 years building</li><li>10-year structural warranty</li><li>Licensed &amp; fully insured</li><li>4.9 rating from homeowners</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>Fixed-price contracts</li><li>180+ homes delivered</li><li>18 years building</li><li>10-year structural warranty</li><li>Licensed &amp; fully insured</li><li>4.9 rating from homeowners</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Studio / about -->
+    <section class="section studio" id="studio">
+      <div class="container studio__grid">
+        <div class="studio__label" data-reveal>
+          <p class="eyebrow">The Ashgrove way</p>
+          <span class="rule"></span>
+        </div>
+        <div class="studio__body">
+          <h2 class="display" data-reveal>A builder who <em>draws</em> the plans, <em>prices</em> the plans, and <em>stands</em> behind every board.</h2>
+          <p class="lead" data-reveal>Most custom homes pass through an architect, an estimator, a builder and a dozen subs who never sit at the same table. We keep design, budget and construction under one roof, so the home you approve on paper is the home you walk into.</p>
+          <div class="stats" data-reveal>
+            <div class="stat"><span class="stat__num" data-count="180" data-suffix="+">0</span><span class="stat__label">Homes delivered</span></div>
+            <div class="stat"><span class="stat__num" data-count="98" data-suffix="%">0</span><span class="stat__label">Finished on schedule</span></div>
+            <div class="stat"><span class="stat__num" data-count="18">0</span><span class="stat__label">Years in the Hill Country</span></div>
+          </div>
+        </div>
+        <figure class="studio__figure" data-reveal="clip">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=70" alt="Architect sketching floor plans by hand on a drafting table" loading="lazy" width="1200" height="800" />
+          <figcaption>
+            <span class="avatars" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span><strong>4.9 / 5</strong> from 140+ homeowners</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal>What we build</p>
+            <h2 class="display" data-reveal>From raw acreage<br />to <em>keys in hand.</em></h2>
+          </div>
+          <p class="section-head__copy" data-reveal>Three ways to work with us. Each one starts with a site walk and ends with a home that has been planned down to the outlet covers before we pour a footing.</p>
+        </div>
+
+        <div class="service" data-reveal>
+          <figure class="service__media" data-reveal="clip">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=72" alt="White modern custom home with a long pool and lounge chairs" loading="lazy" width="1600" height="1067" data-parallax-img />
+          </figure>
+          <div class="service__text">
+            <span class="service__num">01</span>
+            <h3>Design-build custom homes</h3>
+            <p>Our in-house design team shapes the plan around your land, light and daily routines. You get one contract, one schedule and one team from the first sketch through final walkthrough.</p>
+            <ul class="ticks"><li>Site analysis &amp; orientation study</li><li>Architectural plans &amp; 3D walkthroughs</li><li>Interior selections studio</li></ul>
+          </div>
+        </div>
+
+        <div class="service service--flip" data-reveal>
+          <figure class="service__media" data-reveal="clip">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=72" alt="Bright open living room with tall windows, a modern sofa and wood accents" loading="lazy" width="1600" height="1067" data-parallax-img />
+          </figure>
+          <div class="service__text">
+            <span class="service__num">02</span>
+            <h3>Build on your plans</h3>
+            <p>Already working with an architect? We join early, value-engineer the drawings, and give you a line-item fixed price so the design you love stays inside the budget you set.</p>
+            <ul class="ticks"><li>Pre-construction &amp; cost review</li><li>Architect collaboration</li><li>Transparent, line-item pricing</li></ul>
+          </div>
+        </div>
+
+        <div class="service" data-reveal>
+          <figure class="service__media" data-reveal="clip">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=72" alt="Contemporary home exterior with warm wood siding and a landscaped entry" loading="lazy" width="1600" height="1067" data-parallax-img />
+          </figure>
+          <div class="service__text">
+            <span class="service__num">03</span>
+            <h3>Whole-home transformations</h3>
+            <p>For homeowners who love their lot but not their house. We rebuild, expand and re-skin existing homes with the same planning discipline as a ground-up build.</p>
+            <ul class="ticks"><li>Additions &amp; second stories</li><li>Down-to-the-studs renovations</li><li>Outdoor living &amp; pool houses</li></ul>
+          </div>
+        </div>
+
+        <div class="extras">
+          <p class="eyebrow" data-reveal>Included in every build</p>
+          <div class="extras__grid">
+            <article class="extra" data-reveal><span class="extra__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6"/></svg></span><h4>Lot &amp; permit handling</h4><p>Surveys, HOA review, septic, utilities and county permits managed for you.</p></article>
+            <article class="extra" data-reveal style="--d:.08s"><span class="extra__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span><h4>Weekly owner reports</h4><p>Photos, schedule updates and budget status in your client portal every Friday.</p></article>
+            <article class="extra" data-reveal style="--d:.16s"><span class="extra__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><h4>10-year warranty</h4><p>Structural coverage plus a dedicated service team for the first two years.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Homes / projects -->
+    <section class="section homes" id="homes">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal>Selected homes</p>
+            <h2 class="display" data-reveal>Every one is<br /><em>the only one.</em></h2>
+          </div>
+          <div class="homes__controls" data-reveal>
+            <div class="filters" role="tablist" aria-label="Filter homes">
+              <button class="filter is-active" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
+              <button class="filter" type="button" role="tab" aria-selected="false" data-filter="modern">Modern</button>
+              <button class="filter" type="button" role="tab" aria-selected="false" data-filter="ranch">Ranch</button>
+              <button class="filter" type="button" role="tab" aria-selected="false" data-filter="interior">Interiors</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="homes__grid" data-homes>
+          <a class="home home--wide" href="#contact" data-cat="modern" data-reveal>
+            <figure><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=72" alt="Two-story modern home with floor-to-ceiling glass beside a turquoise pool" loading="lazy" width="1600" height="1067" /></figure>
+            <div class="home__meta"><span class="tag">Modern</span><h3>The Pedernales House</h3><p>Spicewood, TX &middot; 5,200 sq ft &middot; 13 months</p></div>
+          </a>
+          <a class="home" href="#contact" data-cat="ranch" data-reveal style="--d:.08s">
+            <figure><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1100&q=72" alt="Modern farmhouse style home with brick and wood facade" loading="lazy" width="1100" height="1400" /></figure>
+            <div class="home__meta"><span class="tag">Ranch</span><h3>Cypress Creek Ranch</h3><p>Wimberley, TX &middot; 3,900 sq ft &middot; 11 months</p></div>
+          </a>
+          <a class="home" href="#contact" data-cat="interior" data-reveal>
+            <figure><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1100&q=72" alt="Airy great room with vaulted ceiling, staircase and neutral furniture" loading="lazy" width="1100" height="1400" /></figure>
+            <div class="home__meta"><span class="tag">Interior</span><h3>Bluebonnet Great Room</h3><p>Dripping Springs, TX &middot; Interior package</p></div>
+          </a>
+          <a class="home" href="#contact" data-cat="modern" data-reveal style="--d:.08s">
+            <figure><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1100&q=72" alt="Dark modern facade glowing with warm lights at dusk" loading="lazy" width="1100" height="1400" /></figure>
+            <div class="home__meta"><span class="tag">Modern</span><h3>Limestone Ridge</h3><p>Lakeway, TX &middot; 4,600 sq ft &middot; 14 months</p></div>
+          </a>
+          <a class="home" href="#contact" data-cat="ranch" data-reveal style="--d:.16s">
+            <figure><img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1100&q=72" alt="Contemporary home framed by trees with a stone pathway" loading="lazy" width="1100" height="1400" /></figure>
+            <div class="home__meta"><span class="tag">Ranch</span><h3>Live Oak Hollow</h3><p>Driftwood, TX &middot; 4,100 sq ft &middot; 12 months</p></div>
+          </a>
+          <a class="home" href="#contact" data-cat="modern" data-reveal>
+            <figure><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1100&q=72" alt="White modern hilltop home with palm trees and a glass balcony" loading="lazy" width="1100" height="1400" /></figure>
+            <div class="home__meta"><span class="tag">Modern</span><h3>Hilltop Courtyard House</h3><p>Bee Cave, TX &middot; 4,300 sq ft &middot; 12 months</p></div>
+          </a>
+          <a class="home home--wide" href="#contact" data-cat="interior" data-reveal style="--d:.08s">
+            <figure><img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=1600&q=72" alt="Chef's kitchen with a large island, pendant lights and dark cabinetry" loading="lazy" width="1600" height="1067" /></figure>
+            <div class="home__meta"><span class="tag">Interior</span><h3>Westlake Chef's Kitchen</h3><p>West Lake Hills, TX &middot; Kitchen &amp; living</p></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="cta-band" data-reveal>
+          <p>Have land, a sketch, or just a Pinterest board? <span>That is enough to start.</span></p>
+          <a class="btn btn--accent" href="#contact">Book a site walk <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="cursor-tag" data-cursor aria-hidden="true">View home</div>
+    </section>
+
+    <!-- Process -->
+    <section class="section process" id="process">
+      <div class="container process__grid">
+        <div class="process__intro">
+          <p class="eyebrow eyebrow--light" data-reveal>How it works</p>
+          <h2 class="display" data-reveal>Five steps.<br /><em>No surprises.</em></h2>
+          <p class="lead" data-reveal>A custom home should feel exciting, not uncertain. Our process locks the big decisions early, so construction is about craft, not change orders.</p>
+          <figure class="process__figure" data-reveal="clip">
+            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1100&q=70" alt="Carpenter cutting timber on a job site" loading="lazy" width="1100" height="733" />
+          </figure>
+        </div>
+        <ol class="steps" data-steps>
+          <span class="steps__line" aria-hidden="true"><span data-steps-fill></span></span>
+          <li class="step" data-reveal><span class="step__num">01</span><div><h3>Site walk &amp; vision</h3><p>We walk your land together, talk through how you live, and set a realistic budget range before anything is drawn.</p><span class="step__time">Week 1</span></div></li>
+          <li class="step" data-reveal><span class="step__num">02</span><div><h3>Design &amp; 3D walkthrough</h3><p>Floor plans, elevations and a 3D model you can explore. Revisions are included until it feels like home.</p><span class="step__time">Weeks 2 to 10</span></div></li>
+          <li class="step" data-reveal><span class="step__num">03</span><div><h3>Selections &amp; fixed price</h3><p>Choose finishes in our selections studio. We deliver a line-item, fixed-price contract you can sign with confidence.</p><span class="step__time">Weeks 10 to 14</span></div></li>
+          <li class="step" data-reveal><span class="step__num">04</span><div><h3>Build</h3><p>One superintendent runs your site start to finish. Weekly reports, photos and budget status land in your portal.</p><span class="step__time">10 to 14 months</span></div></li>
+          <li class="step" data-reveal><span class="step__num">05</span><div><h3>Walkthrough &amp; care</h3><p>A detailed handover, a 60-day and 11-month check-in, and a warranty team that answers the phone.</p><span class="step__time">Move-in and beyond</span></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Craft -->
+    <section class="section craft" id="craft">
+      <div class="container craft__grid">
+        <figure class="craft__a" data-reveal="clip"><img src="https://images.unsplash.com/photo-1590725140246-20acdee442be?auto=format&fit=crop&w=1100&q=70" alt="Exposed timber beams in a vaulted ceiling" loading="lazy" width="1100" height="1400" data-parallax-img /></figure>
+        <div class="craft__text">
+          <p class="eyebrow" data-reveal>Built in the details</p>
+          <blockquote class="craft__quote" data-reveal>&ldquo;You notice a great home from the driveway. You <em>trust</em> it when you run your hand along the trim.&rdquo;</blockquote>
+          <p class="craft__sig" data-reveal><strong>Daniel Ashby</strong>, founder &amp; master builder</p>
+          <ul class="craft__list" data-reveal>
+            <li><span>Framing</span>Advanced framing with engineered lumber, inspected by a third party.</li>
+            <li><span>Envelope</span>Spray-foam insulation and blower-door tested to beat code by 30%.</li>
+            <li><span>Finish</span>Site-built cabinetry and trim from our own millwork shop.</li>
+          </ul>
+        </div>
+        <figure class="craft__b" data-reveal="clip"><img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1100&q=70" alt="Modern staircase with open risers beside large windows" loading="lazy" width="1100" height="800" /></figure>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section stories" id="stories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal>Homeowner stories</p>
+            <h2 class="display" data-reveal>Said best by the<br /><em>people who live there.</em></h2>
+          </div>
+          <div class="slider-nav" data-reveal>
+            <button type="button" class="round" aria-label="Previous story" data-prev>&larr;</button>
+            <button type="button" class="round" aria-label="Next story" data-next>&rarr;</button>
+          </div>
+        </div>
+      </div>
+      <div class="stories__track" data-track tabindex="0" aria-label="Homeowner testimonials">
+        <figure class="story" data-reveal>
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>We interviewed five builders. Ashgrove was the only one who showed up with questions instead of a brochure. Fourteen months later, the final cost matched the contract to the dollar.</blockquote>
+          <figcaption><strong>Rachel &amp; Tom Whitfield</strong><span>Limestone Ridge, Lakeway</span></figcaption>
+        </figure>
+        <figure class="story" data-reveal style="--d:.08s">
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>Building from Colorado felt risky. The Friday reports made it feel like we were standing on the slab every week. We moved in on the date they gave us in month one.</blockquote>
+          <figcaption><strong>Marcus Oyelaran</strong><span>Live Oak Hollow, Driftwood</span></figcaption>
+        </figure>
+        <figure class="story" data-reveal style="--d:.16s">
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>Their design team found a way to keep every heritage oak on our lot and still fit the pool. That kind of care shows up in every corner of the house.</blockquote>
+          <figcaption><strong>Elena Marquez</strong><span>The Pedernales House, Spicewood</span></figcaption>
+        </figure>
+        <figure class="story" data-reveal style="--d:.24s">
+          <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>Two years in, a door started sticking. I called on a Tuesday and someone fixed it on Thursday. That is the part nobody tells you matters most.</blockquote>
+          <figcaption><strong>Grant Holloway</strong><span>Cypress Creek Ranch, Wimberley</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="container faq__grid">
+        <div>
+          <p class="eyebrow" data-reveal>Before you build</p>
+          <h2 class="display" data-reveal>Good questions,<br /><em>straight answers.</em></h2>
+          <p class="lead" data-reveal>Still curious? Call the office and you will talk to a builder, not a call center.</p>
+          <a class="link-arrow" href="tel:+15125550186" data-reveal>(512) 555-0186 <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div class="accordion" data-accordion>
+          <details data-reveal open>
+            <summary>What does a custom home with Ashgrove typically cost?</summary>
+            <div class="accordion__body"><p>Most of our homes land between $425 and $650 per square foot, depending on site conditions, finishes and complexity. We give you a realistic range at the first site walk and a fixed, line-item price before construction begins.</p></div>
+          </details>
+          <details data-reveal>
+            <summary>Do I need to own land before we start?</summary>
+            <div class="accordion__body"><p>No. We regularly help clients evaluate lots before they buy, covering slope, soil, septic, utilities, setbacks and views, so you know what a parcel can support before you commit.</p></div>
+          </details>
+          <details data-reveal>
+            <summary>How long does the whole process take?</summary>
+            <div class="accordion__body"><p>Plan on three to four months for design, selections and permitting, then ten to fourteen months of construction. Your schedule is mapped week by week and shared in your client portal.</p></div>
+          </details>
+          <details data-reveal>
+            <summary>What happens if costs change during the build?</summary>
+            <div class="accordion__body"><p>Your contract price is fixed. If you request a change, we price it in writing and you approve it before any work happens. Unforeseen site conditions are documented with photos and reviewed with you first.</p></div>
+          </details>
+          <details data-reveal>
+            <summary>Can I visit the site while my home is being built?</summary>
+            <div class="accordion__body"><p>Absolutely. We schedule regular walkthroughs with your superintendent at key milestones, and you are welcome on site any time with a quick heads-up for safety.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="contact__media" data-parallax="0.12">
+        <img src="https://images.unsplash.com/photo-1600585153490-76fb20a32601?auto=format&fit=crop&w=2000&q=70" alt="" loading="lazy" width="2000" height="1333" />
+      </div>
+      <div class="contact__shade" aria-hidden="true"></div>
+      <div class="container contact__grid">
+        <div class="contact__copy">
+          <p class="eyebrow eyebrow--light" data-reveal>Start your home</p>
+          <h2 class="display" data-reveal>Let&rsquo;s build the place<br /><em>you&rsquo;ll never want to leave.</em></h2>
+          <p class="lead" data-reveal>Tell us a little about your plans. A builder from our team will reach out within one business day to set up your site walk.</p>
+          <ul class="contact__list" data-reveal>
+            <li><span>Call</span><a href="tel:+15125550186">(512) 555-0186</a></li>
+            <li><span>Email</span><a href="mailto:hello@ashgrovehomes.example">hello@ashgrovehomes.example</a></li>
+            <li><span>Studio</span>Dripping Springs, Texas</li>
+          </ul>
+        </div>
+        <form class="form" data-form data-reveal novalidate>
+          <div class="form__row">
+            <label>Name<input type="text" name="name" autocomplete="name" required placeholder="Jordan Avery" /></label>
+            <label>Email<input type="email" name="email" autocomplete="email" required placeholder="you@email.com" /></label>
+          </div>
+          <label>Where are you in the process?
+            <select name="stage">
+              <option>I own land and I am ready to plan</option>
+              <option>I am looking at lots</option>
+              <option>I have plans from an architect</option>
+              <option>I want to transform my current home</option>
+            </select>
+          </label>
+          <fieldset class="chips">
+            <legend>Estimated budget</legend>
+            <label><input type="radio" name="budget" value="1" checked /><span>$1M to $1.5M</span></label>
+            <label><input type="radio" name="budget" value="2" /><span>$1.5M to $2.5M</span></label>
+            <label><input type="radio" name="budget" value="3" /><span>$2.5M+</span></label>
+          </fieldset>
+          <label>Tell us about your home<textarea name="message" rows="3" placeholder="Acreage, must-haves, timeline..."></textarea></label>
+          <button class="btn btn--accent btn--block" type="submit">Request a site walk <span class="btn__arrow" aria-hidden="true">&rarr;</span></button>
+          <p class="form__note" data-form-note role="status">Concept form. No data is sent.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <a class="brand brand--light" href="#top">
+            <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 25 16 7l11 18" /><path d="M11 25v-6h10v6" /></svg>
+            <span class="brand__name">Ashgrove<small>Custom Homes</small></span>
+          </a>
+          <p class="footer__tag">Thoughtfully designed. Honestly priced. Built to be handed down.</p>
+        </div>
+        <nav class="footer__cols" aria-label="Footer">
+          <div><h4>Explore</h4><a href="#services">Services</a><a href="#homes">Homes</a><a href="#process">Process</a><a href="#faq">FAQ</a></div>
+          <div><h4>Contact</h4><a href="tel:+15125550186">(512) 555-0186</a><a href="mailto:hello@ashgrovehomes.example">hello@ashgrovehomes.example</a><span>Serving Austin &amp; the Hill Country</span></div>
+        </nav>
+      </div>
+      <p class="footer__word" aria-hidden="true">Ashgrove</p>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Ashgrove Custom Homes. A fictional brand.</span>
+        <span>Concept design by <a href="https://brandonfonville.com">Brandon Fonville Creative Studio</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

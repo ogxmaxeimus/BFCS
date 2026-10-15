@@ -82,6 +82,12 @@
       webp: "",
       alt: "Halden design-build practice website concept",
     },
+    ashgrove: {
+      color: "#171512",
+      src: "assets/work/ag-home.jpg",
+      webp: "assets/work/ag-home.webp",
+      alt: "Ashgrove Custom Homes builder website concept",
+    },
   };
 
   const AUTOPLAY_DELAY = 5000;
