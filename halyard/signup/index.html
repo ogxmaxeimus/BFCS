@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open an account | Halyard</title>
+  <meta name="description" content="Three steps, no password. This demo does not create an account.">
+  <meta property="og:title" content="Open an account | Halyard">
+  <meta property="og:description" content="Three steps, no password. This demo does not create an account.">
+  <meta property="og:image" content="/halyard/assets/og.jpg">
+  <link rel="icon" href="/halyard/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/halyard/css/site.css">
+</head>
+<body class="">
+  
+  <header class="header">
+      <div class="wrap">
+        <a class="logo" href="/halyard/"><span class="coin" style="background:#5ce1ff;color:#07080b">H</span> Halyard</a>
+        <nav class="nav"><a class="" href="/halyard/markets/">Markets</a><a class="" href="/halyard/trade/">Trade</a><a class="" href="/halyard/wallet/">Wallet</a><a class="" href="/halyard/earn/">Earn</a><a class="" href="/halyard/launchpad/">Launchpad</a><a class="only-mobile" href="/halyard/login/">Log in</a></nav>
+        <div class="header-right">
+          <a class="px-pill" href="/halyard/markets/btc/">BTC <b>$67,412.80</b></a>
+          <a class="login-link" href="/halyard/login/">Log in</a>
+          <a class="btn" href="/halyard/signup/">Sign up</a>
+          <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span></button>
+        </div>
+      </div>
+    </header>
+  <main><section class="page-hero"><div class="wrap split">
+      <div>
+        <p class="eb">Open an account</p>
+        <h1 class="display">Open an account.</h1>
+        <p class="lede">Three steps, no password. Verification happens in the app with your ID and a selfie.</p>
+      </div>
+      <div class="ticket" data-signup>
+        <div class="steps-ui">
+          <span data-step-mark class="is-on">You</span>
+          <span data-step-mark>Plan</span>
+          <span data-step-mark>Verify</span>
+        </div>
+        <div data-step>
+          <label>Email<input data-email type="email" required></label>
+          <label>Country<select data-country><option value="">Choose a country</option><option>Portugal</option><option>Spain</option><option>Germany</option><option>France</option><option>Netherlands</option><option>Ireland</option><option>Italy</option><option>Austria</option><option>Belgium</option><option>Sweden</option><option>Denmark</option><option>Finland</option><option>Poland</option><option>United Kingdom</option><option>Switzerland</option><option>Brazil</option><option>Mexico</option><option>Singapore</option><option>Japan</option><option>Australia</option><option>Canada</option></select></label>
+          <label class="check"><input data-age type="checkbox"> I'm over 18 and I accept the <a href="/halyard/terms/">terms</a></label>
+          <p class="note hidden" data-step-error></p>
+          <button class="btn" type="button" data-next>Continue</button>
+        </div>
+        <div data-step class="hidden">
+          <p class="mono muted">What brings you</p>
+          <div class="plans"><button type="button" class="is-on" data-plan="Trade"><b>Trade</b><span>Spot markets at the real price</span></button><button type="button" class="" data-plan="Hold"><b>Hold</b><span>Self-custody wallet, your keys</span></button><button type="button" class="" data-plan="Earn"><b>Earn</b><span>Staking and flexible yield</span></button><button type="button" class="" data-plan="Build"><b>Build</b><span>API keys and sub-accounts</span></button></div>
+          <div style="display:flex;gap:8px;margin-top:12px"><button class="btn ghost" type="button" data-back>Back</button><button class="btn" type="button" data-next>Continue</button></div>
+        </div>
+        <div data-step class="hidden">
+          <p>Verification takes about four minutes in the app: a photo ID and a short selfie. Most accounts are approved the same day.</p>
+          <ul><li>Passport, ID card or driving licence</li><li>A selfie, checked against the ID</li><li>No proof of address for personal accounts</li></ul>
+          <div class="card" data-summary>
+            <p class="mono muted">Your summary</p>
+            <p>Halyard account request</p>
+            <p>Email: <span data-sum-email></span></p>
+            <p>Country: <span data-sum-country></span></p>
+            <p>What brings you: <span data-sum-plan>Trade</span></p>
+            <p><strong>Online onboarding is not connected yet.</strong></p>
+            <p class="muted">Copy your summary or email it to us and we open the account by hand.</p>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+            <button class="btn" type="button" data-copy-summary>Copy this summary</button>
+            <a class="btn ghost" href="mailto:support@halyard.exchange">Email it to us</a>
+            <button class="btn ghost" type="button" data-back>Back</button>
+          </div>
+          <p class="note hidden" data-demo-note></p>
+        </div>
+        <p class="demo-note">Demo prices are generated on this page</p>
+      </div>
+    </div></section></main>
+  <footer class="footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <div>
+            <h2 class="display">Open an account.</h2>
+            <p class="muted" style="margin-top:10px">Market notes, every Monday. One mail a week: what moved, what listed, what changed in the fee schedule. No promotions in between.</p>
+            <form class="news" data-demo>
+              <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+              <button class="btn" type="submit">Subscribe</button>
+            </form>
+            <p class="note hidden" data-demo-note>This demo does not send mail. Write to support@halyard.exchange.</p>
+          </div>
+          <div class="cols"><div><h3>PRODUCTS</h3><a href="/halyard/markets/">Markets</a><a href="/halyard/trade/">Trade</a><a href="/halyard/wallet/">Wallet</a><a href="/halyard/earn/">Earn</a><a href="/halyard/launchpad/">Launchpad</a><a href="/halyard/card/">Card</a><a href="/halyard/pay/">Pay</a></div><div><h3>COMPANY</h3><a href="/halyard/about/">About</a><a href="/halyard/team/">Team</a><a href="/halyard/careers/">Careers</a><a href="/halyard/press/">Press</a><a href="/halyard/blog/">Blog</a></div><div><h3>SUPPORT</h3><a href="/halyard/help/">Help center</a><a href="/halyard/status/">Status</a><a href="/halyard/fees/">Fees</a><a href="/halyard/api/">API</a><a href="/halyard/security/">Security</a><a href="/halyard/contact/">Contact</a></div></div>
+        </div>
+        <div class="legal">
+          <div>
+            <a href="/halyard/privacy/">Privacy</a>
+            <a href="/halyard/terms/">Terms</a>
+            <a href="/halyard/cookies/">Cookies</a>
+            <a href="mailto:support@halyard.exchange">support@halyard.exchange</a>
+          </div>
+          <div>Halyard Markets Ltd · VASP · Crypto assets are volatile; you may lose what you put in.</div>
+          <div>
+            <a href="https://apps.apple.com" target="_blank" rel="noreferrer">App Store</a>
+            <a href="https://play.google.com" target="_blank" rel="noreferrer">Google Play</a>
+            <a href="https://x.com" target="_blank" rel="noreferrer">X</a>
+            <a href="https://discord.com" target="_blank" rel="noreferrer">Discord</a>
+            <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <script src="/halyard/js/site.js"></script>
+</body>
+</html>
