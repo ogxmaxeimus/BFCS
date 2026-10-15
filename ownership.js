@@ -366,6 +366,7 @@ function renderMissingProjects() {
     ashfordvale: "Ashford Vale LLP — concept",
     harborglobal: "Harbor Global LLP — concept",
     saltmarsh: "Saltmarsh Co. — concept",
+    halden: "Halden Build, concept",
   };
 
   container.hidden = false;
@@ -391,6 +392,7 @@ function restoreProjectById(id) {
     ashfordvale: "Ashford Vale LLP — concept",
     harborglobal: "Harbor Global LLP — concept",
     saltmarsh: "Saltmarsh Co. — concept",
+    halden: "Halden Build, concept",
   };
   const label = labels[id] || id;
   if (!confirm(`Restore "${label}" to its original default content?`)) return;

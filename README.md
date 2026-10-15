@@ -54,8 +54,9 @@ Local reference: see `.env.example` (do not commit a real `.env`).
 ## Features
 
 Homepage with work flipper and Start a Project CTA.  
-Works portfolio with case studies including TradeVerified, ScopeSignal, Maxeimus, Blue Collar Millionaire, Knights Play, Ashford Vale, Harbor Global, and Saltmarsh.  
+Works portfolio with case studies including TradeVerified, ScopeSignal, Maxeimus, Blue Collar Millionaire, Knights Play, Ashford Vale, Harbor Global, Saltmarsh, and Halden.  
 Saltmarsh Co. product launch concept: packaging, labels, landing page, and social sequence.  
+Halden Build design-build concept: job ledger, six gates, material index, and planning range.  
 Services packages for brand, product, digital, retainers, and web.  
 Discovery questionnaire before proposals.  
 Project inquiry on Write.  

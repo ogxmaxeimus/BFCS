@@ -76,6 +76,12 @@
       webp: "",
       alt: "Saltmarsh Co. CPG product launch concept",
     },
+    halden: {
+      color: "#1c332b",
+      src: "assets/work/hb-home.png",
+      webp: "",
+      alt: "Halden design-build practice website concept",
+    },
   };
 
   const AUTOPLAY_DELAY = 5000;
