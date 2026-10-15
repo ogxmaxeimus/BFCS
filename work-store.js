@@ -698,6 +698,98 @@
         },
       ],
     },
+
+    {
+      id: "fieldmark",
+      title: "Fieldmark",
+      titleSub: "Journeys",
+      meta: "Concept: small-group tour operator website",
+      tag: "Web concept",
+      caseStudy: {
+        eyebrow: "Case study: Concept",
+        sub: "A booking-first website concept for small-group tour operators, made to turn browsers into held places on real departures.",
+        facts: [
+          { label: "Role", value: "Lead Designer & Front-end Developer" },
+          { label: "Team", value: "Independent concept" },
+          { label: "Tools", value: "HTML, CSS, JS, Netlify" },
+          { label: "Type", value: "Concept: marketing website, desktop and mobile" },
+        ],
+        link: { href: "/concepts/tour-operator/", label: "View the live concept" },
+        overview:
+          "Fieldmark Journeys is a fictional small-group walking company with local trail leaders on four continents, created for Brandon Fonville Creative Studio to show tour operators what their website could be. I owned the concept end to end: positioning, information architecture, copy, the visual system, and a hand-built, responsive front end with no page builder or template behind it.",
+        sections: [
+          {
+            heading: "The challenge",
+            body: "Tour operators sell a feeling months before anyone packs a bag. Most operator sites lead with a generic slideshow, hide dates and prices several clicks deep, and make every trip look like every other trip. Travellers comparing operators want to picture the actual days, see who will lead them, and know what it costs and when it leaves, and they want that on a phone during a lunch break.",
+          },
+          {
+            heading: "The approach",
+            body: "I built the page around the questions a traveller asks in order: where can I go, what is a day actually like, who takes me, what do other people say, and how do I hold a place. The hero puts a trip finder and a draggable stage-by-stage route side by side, so the first scroll already feels like planning. Departures show length, price, date and places left on every card, a destinations index pairs each region with its best months, and every section ends near the planner form.",
+          },
+          {
+            heading: "Design system",
+            body: "Deep pine black, warm bone paper and a single marigold accent, chosen to read like a lantern on a dark trail rather than a travel brochure. Bricolage Grotesque carries tight, confident headlines, Instrument Serif italics add the human voice, and JetBrains Mono handles small labels like a field log: stage numbers, distances, departure dates. Large photography, soft rounded frames and restrained motion (masked headline reveals, crossfading stage images, a scroll-linked clock) keep the focus on the places.",
+          },
+          {
+            heading: "Key features",
+            list: [
+              "Draggable, keyboard-friendly route slider that swaps the hero photo and stage card for each of seven stages",
+              "Trip finder that jumps to departures and filters them by region",
+              "Drag-to-scroll departures rail with price, date and places left on every card",
+              "Hover destinations index with best travel months and live image preview",
+              "Scroll-linked \"day on the trail\" with a large hour-by-hour clock",
+              "Trail leader profiles, rotating reviews, field notes and a planner form with a one-day reply promise",
+              "Fully responsive, reduced-motion aware, and fast: plain HTML, CSS, and JS",
+            ],
+          },
+        ],
+        outcomeHeading: "Outcome & what it shows",
+        outcome:
+          "The concept shows an operator how their site can sell specific departures, not just a brand. Real dates, prices and places left create honest urgency, the route and day sections answer \"what will it actually be like\" before the first call, and leader profiles build the trust that small-group travel runs on. It is a ready starting point for a real operator, adaptable to their trips, regions and booking system. Fieldmark is fictional and not affiliated with any real company.",
+      },
+      items: [
+        {
+          category: "Digital",
+          src: "assets/work/fm-home.jpg",
+          webp: "assets/work/fm-home.webp",
+          alt: "Fieldmark Journeys concept homepage with a mountain hero, trip finder and draggable stage route",
+          width: 1536,
+          height: 1024,
+          title: "Homepage",
+          span: "Concept • web",
+        },
+        {
+          category: "Digital",
+          src: "assets/work/fm-departures.jpg",
+          webp: "assets/work/fm-departures.webp",
+          alt: "Fieldmark departures rail with filter chips and trip cards showing price, date and places left",
+          width: 1536,
+          height: 1024,
+          title: "Departures",
+          span: "Concept • booking UX",
+        },
+        {
+          category: "Digital",
+          src: "assets/work/fm-day.jpg",
+          webp: "assets/work/fm-day.webp",
+          alt: "Fieldmark scroll-linked day on the trail section with a large hour-by-hour clock",
+          width: 1536,
+          height: 1024,
+          title: "A Day on the Trail",
+          span: "Concept • motion",
+        },
+        {
+          category: "Digital",
+          src: "assets/work/fm-mobile.jpg",
+          webp: "assets/work/fm-mobile.webp",
+          alt: "Fieldmark mobile screens showing the hero, departures and planner form",
+          width: 1536,
+          height: 1024,
+          title: "Mobile",
+          span: "Concept • responsive",
+        },
+      ],
+    },
   ];
 
   function clone(value) {
