@@ -634,6 +634,7 @@ const WORK_PREVIEWS = {
   ashfordvale: { src: "assets/work/av-home.png", caption: "Ashford Vale, Web" },
   harborglobal: { src: "assets/work/hg-home.png", caption: "Harbor Global, Web" },
   saltmarsh: { src: "assets/work/sm-home.png", caption: "Saltmarsh · Product Launch" },
+  halden: { src: "assets/work/hb-home.png", caption: "Halden, Web concept" },
   ashgrove: { src: "assets/work/ag-home.jpg", caption: "Ashgrove, Web" },
 };
 
