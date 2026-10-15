@@ -694,8 +694,10 @@ function initWorkIndex(projects) {
     if (!src) return;
     if (imgEl.getAttribute("src") !== src) {
       imgEl.style.opacity = "0";
-      imgEl.onload = () => { imgEl.style.opacity = ""; };
+      const reveal = () => { imgEl.style.opacity = ""; };
+      imgEl.onload = reveal;
       imgEl.src = src;
+      if (imgEl.complete) reveal();
     }
     if (captionEl) captionEl.textContent = caption;
     previewEl.classList.add("is-live");
