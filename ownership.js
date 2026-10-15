@@ -367,6 +367,7 @@ function renderMissingProjects() {
     harborglobal: "Harbor Global LLP — concept",
     saltmarsh: "Saltmarsh Co. — concept",
     halden: "Halden Build, concept",
+    ashgrove: "Ashgrove Custom Homes, concept",
   };
 
   container.hidden = false;
@@ -393,6 +394,7 @@ function restoreProjectById(id) {
     harborglobal: "Harbor Global LLP — concept",
     saltmarsh: "Saltmarsh Co. — concept",
     halden: "Halden Build, concept",
+    ashgrove: "Ashgrove Custom Homes, concept",
   };
   const label = labels[id] || id;
   if (!confirm(`Restore "${label}" to its original default content?`)) return;
