@@ -54,10 +54,11 @@ Local reference: see `.env.example` (do not commit a real `.env`).
 ## Features
 
 Homepage with work flipper and Start a Project CTA.  
-Works portfolio with case studies including TradeVerified, ScopeSignal, Maxeimus, Blue Collar Millionaire, Knights Play, Ashford Vale, Harbor Global, Saltmarsh, Halden, and Ashgrove.  
+Works portfolio with case studies including TradeVerified, ScopeSignal, Maxeimus, Blue Collar Millionaire, Knights Play, Ashford Vale, Harbor Global, Saltmarsh, Halden, Ashgrove, and Fieldmark.  
 Saltmarsh Co. product launch concept: packaging, labels, landing page, and social sequence.  
 Halden Build design-build concept: job ledger, six gates, material index, and planning range.  
 Ashgrove Custom Homes builder website concept, live at `/concepts/custom-home-builder/`: homes gallery, five-step process, and site walk form.  
+Fieldmark Journeys small-group tour operator website concept, live at `/concepts/tour-operator/`: draggable stage route, departures rail, and planner form.  
 Services packages for brand, product, digital, retainers, and web.  
 Discovery questionnaire before proposals.  
 Project inquiry on Write.  
