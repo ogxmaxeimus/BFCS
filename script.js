@@ -636,6 +636,7 @@ const WORK_PREVIEWS = {
   saltmarsh: { src: "assets/work/sm-home.png", caption: "Saltmarsh · Product Launch" },
   halden: { src: "assets/work/hb-home.png", caption: "Halden, Web concept" },
   ashgrove: { src: "assets/work/ag-home.jpg", caption: "Ashgrove, Web" },
+  fieldmark: { src: "assets/work/fm-home.jpg", caption: "Fieldmark, Web" },
 };
 
 function initPortfolio() {

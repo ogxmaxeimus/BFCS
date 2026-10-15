@@ -88,6 +88,12 @@
       webp: "assets/work/ag-home.webp",
       alt: "Ashgrove Custom Homes builder website concept",
     },
+    fieldmark: {
+      color: "#0f1512",
+      src: "assets/work/fm-home.jpg",
+      webp: "assets/work/fm-home.webp",
+      alt: "Fieldmark Journeys small-group tour operator website concept",
+    },
   };
 
   const AUTOPLAY_DELAY = 5000;

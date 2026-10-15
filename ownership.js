@@ -368,6 +368,7 @@ function renderMissingProjects() {
     saltmarsh: "Saltmarsh Co. — concept",
     halden: "Halden Build, concept",
     ashgrove: "Ashgrove Custom Homes, concept",
+    fieldmark: "Fieldmark Journeys, concept",
   };
 
   container.hidden = false;
@@ -395,6 +396,7 @@ function restoreProjectById(id) {
     saltmarsh: "Saltmarsh Co. — concept",
     halden: "Halden Build, concept",
     ashgrove: "Ashgrove Custom Homes, concept",
+    fieldmark: "Fieldmark Journeys, concept",
   };
   const label = labels[id] || id;
   if (!confirm(`Restore "${label}" to its original default content?`)) return;

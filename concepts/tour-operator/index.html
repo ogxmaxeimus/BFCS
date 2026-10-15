@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fieldmark Journeys | Small-Group Walking Journeys (Concept)</title>
+  <meta name="description" content="Fieldmark Journeys is a fictional small-group walking tour operator. A website concept by Brandon Fonville Creative Studio." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0f1512" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230f1512'/%3E%3Cpath d='M8 21l5-8 4 5 3-4 4 7' fill='none' stroke='%23f2a541' stroke-width='2.6' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=70" fetchpriority="high" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" data-nav>
+    <a class="brand" href="#top" aria-label="Fieldmark Journeys, back to top">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" /><path d="M8 21l5-8 4 5 3-4 4 7" /></svg>
+      <span>Fieldmark</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#journeys">Journeys</a>
+      <a href="#places">Places</a>
+      <a href="#leaders">Leaders</a>
+      <a href="#notes">Field notes</a>
+      <a href="#why">About</a>
+    </nav>
+    <a class="btn btn--light nav__cta" href="#plan">Hold a place</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden data-menu>
+    <a href="#journeys">Journeys</a>
+    <a href="#places">Places</a>
+    <a href="#leaders">Leaders</a>
+    <a href="#notes">Field notes</a>
+    <a href="#plan">Hold a place</a>
+  </div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top" data-hero>
+      <div class="hero__media" aria-hidden="true">
+        <img class="is-active" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=70" alt="" data-stage-img="0" />
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=70" alt="" data-stage-img="1" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=2000&q=70" alt="" data-stage-img="2" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=2000&q=70" alt="" data-stage-img="3" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=70" alt="" data-stage-img="4" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=2000&q=70" alt="" data-stage-img="5" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=2000&q=70" alt="" data-stage-img="6" loading="lazy" />
+      </div>
+
+      <div class="hero__body">
+        <p class="hero__kicker"><span class="tag">Walk of the season</span><span class="mono">Mont Blanc &middot; 7 days &middot; 10 walkers</span></p>
+        <h1 class="hero__title" data-split>
+          <span>Walk the long way</span>
+          <span><em>round Mont Blanc.</em></span>
+        </h1>
+
+        <form class="finder" data-finder aria-label="Find a journey">
+          <label class="finder__field">
+            <span class="mono">Region</span>
+            <select name="region">
+              <option>The Alps</option>
+              <option>Japan</option>
+              <option>Morocco</option>
+              <option>Peru</option>
+              <option>Norway</option>
+              <option>Italian coast</option>
+            </select>
+          </label>
+          <label class="finder__field">
+            <span class="mono">Month</span>
+            <select name="month">
+              <option>June 2027</option>
+              <option>July 2027</option>
+              <option>August 2027</option>
+              <option>September 2027</option>
+            </select>
+          </label>
+          <label class="finder__field">
+            <span class="mono">Walkers</span>
+            <select name="walkers">
+              <option>1 walker</option>
+              <option selected>2 walkers</option>
+              <option>3 walkers</option>
+              <option>4 walkers</option>
+            </select>
+          </label>
+          <button class="btn btn--accent" type="submit">Search journeys <span aria-hidden="true">&rarr;</span></button>
+        </form>
+      </div>
+
+      <aside class="stage-card" aria-live="polite" data-stage-card>
+        <div class="stage-card__top mono"><span>Stage <b data-stage-num>01</b> / 07</span><span class="accent" data-stage-place>Les Houches</span></div>
+        <h2 data-stage-title>Up and over the Col de Voza</h2>
+        <p data-stage-text>We meet in Chamonix at eight, take the valley train to the trailhead and climb through larch woods to a first lunch with the whole massif in view.</p>
+        <p class="mono accent" data-stage-meta>14 km on foot &middot; 1,050 m up</p>
+        <div class="stage-card__next">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=200&h=140&q=60" alt="" data-stage-next-img />
+          <div><span class="mono">Tomorrow</span><strong data-stage-next>Les Contamines</strong></div>
+        </div>
+        <a class="link" href="#journeys">See the full itinerary</a>
+      </aside>
+
+      <div class="route" data-route>
+        <div class="route__head mono"><span>The route, stage by stage</span><span>Drag the trail</span></div>
+        <div class="route__track" role="slider" tabindex="0" aria-label="Choose a stage of the Mont Blanc walk" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1" aria-valuetext="Stage 1, Les Houches" data-route-track>
+          <div class="route__line"><span class="route__fill" data-route-fill></span></div>
+          <span class="route__knob" data-route-knob></span>
+          <ol class="route__stops" data-route-stops>
+            <li><button type="button" tabindex="-1"><span class="mono">Stage 1</span>Les Houches</button></li>
+            <li><button type="button" tabindex="-1"><span class="mono">Stage 2</span>Les Contamines</button></li>
+            <li><button type="button" tabindex="-1"><span class="mono">Stage 3</span>Les Mottets</button></li>
+            <li><button type="button" tabindex="-1"><span class="mono">Stage 4</span>Courmayeur</button></li>
+            <li><button type="button" tabindex="-1"><span class="mono">Stage 5</span>Val Ferret</button></li>
+            <li><button type="button" tabindex="-1"><span class="mono">Stage 6</span>Champex-Lac</button></li>
+            <li><button type="button" tabindex="-1"><span class="mono">Stage 7</span>Chamonix</button></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="why section" id="why">
+      <div class="wrap">
+        <p class="eyebrow mono" data-reveal>01 / 08 &middot; Why Fieldmark</p>
+        <p class="why__statement" data-reveal>
+          Fieldmark is a walking company of <span class="pill-img" style="--img:url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=240&h=140&q=60')"></span> nineteen planners and sixty-four trail leaders. We keep groups to ten, we
+          <em>walk every route before we sell it,</em> and when you call, <span class="pill-img" style="--img:url('https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=240&h=140&q=60')"></span> a planner picks up.
+        </p>
+        <dl class="stats" data-reveal>
+          <div><dt class="mono">Walkers since 2011</dt><dd><span data-count="9800">9,800</span></dd></div>
+          <div><dt class="mono">Countries on foot</dt><dd><span data-count="24">24</span></dd></div>
+          <div><dt class="mono">From 2,240 reviews</dt><dd>4.8</dd></div>
+          <div class="stats__link"><a class="btn btn--ghost" href="#leaders">Meet the people <span aria-hidden="true">&rarr;</span></a></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Journeys -->
+    <section class="journeys section" id="journeys">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow mono" data-reveal>02 / 08 &middot; Departures</p>
+            <h2 class="display" data-reveal>Groups leaving <em>this year.</em></h2>
+          </div>
+          <div class="section-head__side" data-reveal>
+            <div class="chips" role="tablist" aria-label="Filter journeys" data-filter>
+              <button type="button" role="tab" aria-selected="true" data-filter-key="all">All</button>
+              <button type="button" role="tab" aria-selected="false" data-filter-key="mountain">Mountain</button>
+              <button type="button" role="tab" aria-selected="false" data-filter-key="coast">Coast</button>
+              <button type="button" role="tab" aria-selected="false" data-filter-key="culture">Villages</button>
+            </div>
+            <p class="mono counter"><span data-rail-count>01</span> / <span data-rail-total>06</span> &middot; Drag the cards</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rail" data-rail tabindex="0" aria-label="Upcoming journeys">
+        <article class="trip" data-kind="mountain">
+          <div class="trip__img"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=900&h=1100&q=70" alt="Snow peaks above an alpine valley" loading="lazy" /></div>
+          <p class="mono trip__where">Mountain &middot; France, Italy, Switzerland</p>
+          <h3>Mont Blanc, hut to hut</h3>
+          <dl class="trip__facts"><div><dt>Length</dt><dd>7 days</dd></div><div><dt>From</dt><dd>$2,940</dd></div><div><dt>Leaves</dt><dd>13 Jun</dd></div><div><dt>Places</dt><dd class="accent">5 left</dd></div></dl>
+        </article>
+        <article class="trip" data-kind="culture">
+          <div class="trip__img"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&h=1100&q=70" alt="Pagoda above a quiet old street in Japan" loading="lazy" /></div>
+          <p class="mono trip__where">Villages &middot; Japan</p>
+          <h3>The Kumano pilgrim road</h3>
+          <dl class="trip__facts"><div><dt>Length</dt><dd>8 days</dd></div><div><dt>From</dt><dd>$3,480</dd></div><div><dt>Leaves</dt><dd>8 Apr</dd></div><div><dt>Places</dt><dd class="accent">7 left</dd></div></dl>
+        </article>
+        <article class="trip" data-kind="culture">
+          <div class="trip__img"><img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=900&h=1100&q=70" alt="Earth kasbah among palms in Morocco" loading="lazy" /></div>
+          <p class="mono trip__where">Villages &middot; Morocco</p>
+          <h3>High Atlas, village to village</h3>
+          <dl class="trip__facts"><div><dt>Length</dt><dd>7 days</dd></div><div><dt>From</dt><dd>$1,980</dd></div><div><dt>Leaves</dt><dd>17 Oct</dd></div><div><dt>Places</dt><dd class="accent">9 left</dd></div></dl>
+        </article>
+        <article class="trip" data-kind="mountain">
+          <div class="trip__img"><img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=900&h=1100&q=70" alt="Terraced ruins in the Peruvian Andes" loading="lazy" /></div>
+          <p class="mono trip__where">Mountain &middot; Peru</p>
+          <h3>Sacred Valley high trails</h3>
+          <dl class="trip__facts"><div><dt>Length</dt><dd>9 days</dd></div><div><dt>From</dt><dd>$3,150</dd></div><div><dt>Leaves</dt><dd>2 May</dd></div><div><dt>Places</dt><dd class="accent">4 left</dd></div></dl>
+        </article>
+        <article class="trip" data-kind="coast">
+          <div class="trip__img"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&h=1100&q=70" alt="Colourful cliff village above the sea in Italy" loading="lazy" /></div>
+          <p class="mono trip__where">Coast &middot; Italy</p>
+          <h3>Ligurian cliff paths</h3>
+          <dl class="trip__facts"><div><dt>Length</dt><dd>6 days</dd></div><div><dt>From</dt><dd>$2,260</dd></div><div><dt>Leaves</dt><dd>19 Sep</dd></div><div><dt>Places</dt><dd class="accent">8 left</dd></div></dl>
+        </article>
+        <article class="trip" data-kind="coast">
+          <div class="trip__img"><img src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&h=1100&q=70" alt="Red cabins on a still northern lake" loading="lazy" /></div>
+          <p class="mono trip__where">Coast &middot; Norway</p>
+          <h3>Lofoten fjord crossings</h3>
+          <dl class="trip__facts"><div><dt>Length</dt><dd>7 days</dd></div><div><dt>From</dt><dd>$3,320</dd></div><div><dt>Leaves</dt><dd>1 Jul</dd></div><div><dt>Places</dt><dd class="accent">6 left</dd></div></dl>
+        </article>
+      </div>
+
+      <div class="wrap">
+        <div class="journeys__foot" data-reveal>
+          <p>Ten walkers at most, a leader from the valley you are walking, and one price that covers huts, bags and dinners. These are the next groups to set out.</p>
+          <a class="btn btn--ghost" href="#plan">All 31 journeys <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Places -->
+    <section class="places section" id="places">
+      <div class="wrap places__grid">
+        <div>
+          <p class="eyebrow mono" data-reveal>03 / 08 &middot; Places</p>
+          <ol class="places__list" data-places>
+            <li data-img="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&h=1100&q=70"><span class="mono">01</span><strong>The Alps</strong><span class="places__season">June to mid September</span><span class="mono">6 journeys</span></li>
+            <li data-img="https://images.unsplash.com/photo-1528164344705-47542687000d?auto=format&fit=crop&w=900&h=1100&q=70"><span class="mono">02</span><strong>Japan</strong><span class="places__season">April, May and November</span><span class="mono">4 journeys</span></li>
+            <li data-img="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=900&h=1100&q=70"><span class="mono">03</span><strong>Morocco</strong><span class="places__season">March to May, October</span><span class="mono">3 journeys</span></li>
+            <li data-img="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=900&h=1100&q=70"><span class="mono">04</span><strong>Peru</strong><span class="places__season">May to September</span><span class="mono">2 journeys</span></li>
+            <li data-img="https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=900&h=1100&q=70"><span class="mono">05</span><strong>Norway</strong><span class="places__season">Late June to August</span><span class="mono">3 journeys</span></li>
+            <li data-img="https://images.unsplash.com/photo-1499678329028-101435549a4e?auto=format&fit=crop&w=900&h=1100&q=70"><span class="mono">06</span><strong>Mediterranean</strong><span class="places__season">April to June, September</span><span class="mono">5 journeys</span></li>
+          </ol>
+        </div>
+        <figure class="places__figure" data-reveal>
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&h=1100&q=70" alt="Alpine village beside a lake below snow peaks" loading="lazy" data-places-img />
+          <figcaption class="mono" data-places-cap>The Alps &middot; best June to mid September</figcaption>
+        </figure>
+      </div>
+      <div class="wrap">
+        <p class="places__note" data-reveal>We only sell routes our own team has walked end to end. <em>If we would not take our families, we do not take yours.</em></p>
+      </div>
+    </section>
+
+    <!-- A day on the trail -->
+    <section class="day" id="day" data-day>
+      <div class="day__sticky">
+        <div class="day__bg" aria-hidden="true">
+          <img class="is-active" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1800&q=65" alt="" data-day-img />
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=65" alt="" data-day-img loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1490682143684-14369e18dce8?auto=format&fit=crop&w=1800&q=65" alt="" data-day-img loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?auto=format&fit=crop&w=1800&q=65" alt="" data-day-img loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1800&q=65" alt="" data-day-img loading="lazy" />
+        </div>
+        <div class="wrap day__inner">
+          <div class="day__left">
+            <p class="eyebrow mono">04 / 08 &middot; A day on the trail</p>
+            <h2 class="display">From the hut door <em>to the hut table.</em></h2>
+            <p class="day__lede">Every stage is different, but the rhythm holds. Here is stage five, Val Ferret, hour by hour.</p>
+          </div>
+          <div class="day__right">
+            <p class="day__clock" aria-hidden="true" data-day-clock>05:50</p>
+            <div class="day__now">
+              <p class="mono accent" data-day-step>Moment 01 / 05</p>
+              <h3 data-day-title>Porridge by headtorch</h3>
+              <p data-day-text>The guardian has the stove going before anyone stirs. Boots on by half six, packs light because the bags travel by road.</p>
+            </div>
+            <ol class="day__ticks mono" data-day-ticks>
+              <li class="is-active">05:50</li><li>08:15</li><li>12:30</li><li>15:45</li><li>19:30</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaders -->
+    <section class="leaders section" id="leaders">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow mono" data-reveal>05 / 08 &middot; Trail leaders</p>
+            <h2 class="display" data-reveal>Led by people <em>who live there.</em></h2>
+          </div>
+          <p class="section-head__copy" data-reveal>Sixty-four leaders and every one of them walks the hills they grew up in. No one is flown in for the season.</p>
+        </div>
+
+        <div class="leaders__stage" data-leaders>
+          <div class="leaders__photos" aria-hidden="true">
+            <img class="is-active" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&h=1100&q=70" alt="" />
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&h=1100&q=70" alt="" />
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&h=1100&q=70" alt="" />
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&h=1100&q=70" alt="" />
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=900&h=1100&q=70" alt="" />
+          </div>
+          <div class="leaders__info">
+            <ol class="leaders__names" role="tablist" aria-label="Trail leaders">
+              <li><button type="button" role="tab" aria-selected="true"><span class="mono">The Alps</span>Margaux Perrin</button></li>
+              <li><button type="button" role="tab" aria-selected="false"><span class="mono">Japan</span>Kenta Ishida</button></li>
+              <li><button type="button" role="tab" aria-selected="false"><span class="mono">Morocco</span>Youssef Amrani</button></li>
+              <li><button type="button" role="tab" aria-selected="false"><span class="mono">Peru</span>Rosa Quispe</button></li>
+              <li><button type="button" role="tab" aria-selected="false"><span class="mono">Norway</span>Ingrid Solberg</button></li>
+            </ol>
+            <div class="leaders__bio" aria-live="polite">
+              <p class="mono accent" data-leader-role>Lead guide &middot; Les Houches, France</p>
+              <p data-leader-bio>Raised in a chalet above the Arve valley and qualified as a mountain leader at twenty. Knows every hut guardian on the route by first name, and most of their dogs.</p>
+              <p class="mono leaders__count" data-leader-count>186 groups led</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews section" id="reviews">
+      <div class="wrap reviews__grid">
+        <div>
+          <p class="eyebrow mono" data-reveal>06 / 08 &middot; Reviews</p>
+          <p class="reviews__score" data-reveal><strong>4.8</strong><span class="mono">out of 5, from 2,240 walkers</span></p>
+          <p class="reviews__note" data-reveal>Every review comes from someone who finished the walk. We publish the three-star ones too.</p>
+        </div>
+        <div class="reviews__main" data-reviews>
+          <p class="mono" data-review-count>Review 01 / 05</p>
+          <blockquote>
+            <p data-review-quote>"I booked for the mountains and came home talking about the people. Margaux set a pace where nobody felt slow and nobody felt held back."</p>
+            <footer><strong data-review-name>Priya Raman</strong><span class="mono" data-review-trip>Mont Blanc, hut to hut &middot; July 2026</span></footer>
+          </blockquote>
+          <div class="reviews__dots" role="tablist" aria-label="Choose a review">
+            <button type="button" role="tab" aria-selected="true" aria-label="Review 1"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Review 2"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Review 3"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Review 4"></button>
+            <button type="button" role="tab" aria-selected="false" aria-label="Review 5"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Field notes -->
+    <section class="notes section" id="notes">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow mono" data-reveal>07 / 08 &middot; Field notes</p>
+            <h2 class="display" data-reveal>Written <em>between walks.</em></h2>
+          </div>
+          <a class="btn btn--ghost" href="#notes" data-reveal>All field notes <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div class="notes__grid">
+          <article class="note note--lead" data-reveal>
+            <div class="note__img"><img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&h=800&q=70" alt="Map, camera and boots laid out for a trip" loading="lazy" /></div>
+            <p class="mono">Packing &middot; Margaux Perrin &middot; 7 min</p>
+            <h3>The seven kilo pack: what actually earns its place</h3>
+            <p>Your bags go ahead by road, so the pack on your back only carries the day. Here is the list our leaders swear by, and the three things everyone brings and never uses.</p>
+          </article>
+          <article class="note" data-reveal>
+            <div class="note__img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&h=560&q=70" alt="Plated dinner on a long shared table" loading="lazy" /></div>
+            <p class="mono">Food &middot; Kenta Ishida &middot; 5 min</p>
+            <h3>Dinner at the inn at the end of the road</h3>
+          </article>
+          <article class="note" data-reveal>
+            <div class="note__img"><img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=800&h=560&q=70" alt="Walker with a pack looking out from a high rock" loading="lazy" /></div>
+            <p class="mono">Planning &middot; Fieldmark &middot; 8 min</p>
+            <h3>How fit is fit enough? An honest grading guide</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plan -->
+    <section class="plan" id="plan">
+      <div class="plan__bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=65" alt="" loading="lazy" /></div>
+      <div class="wrap plan__inner">
+        <p class="eyebrow mono" data-reveal>08 / 08 &middot; Hold a place</p>
+        <h2 class="plan__title" data-reveal>Tell us where. <em>We plan the rest.</em></h2>
+        <form class="finder finder--plan" data-plan-form aria-label="Ask a planner" data-reveal>
+          <label class="finder__field"><span class="mono">Region</span>
+            <select name="region"><option>Anywhere</option><option>The Alps</option><option>Japan</option><option>Morocco</option><option>Peru</option><option>Norway</option><option>Mediterranean</option></select>
+          </label>
+          <label class="finder__field"><span class="mono">Month</span>
+            <select name="month"><option>Any month</option><option>April</option><option>May</option><option>June</option><option>July</option><option>September</option><option>October</option></select>
+          </label>
+          <label class="finder__field"><span class="mono">Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+          </label>
+          <button class="btn btn--accent" type="submit">Ask a planner <span aria-hidden="true">&rarr;</span></button>
+        </form>
+        <p class="plan__status mono" role="status" data-plan-status></p>
+        <div class="plan__meta mono" data-reveal>
+          <span><i class="dot" aria-hidden="true"></i> Holding places for 2027 departures</span>
+          <span>A planner replies within one working day</span>
+          <a href="tel:+18025550147">+1 (802) 555-0147</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div>
+          <a class="brand" href="#top">
+            <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" /><path d="M8 21l5-8 4 5 3-4 4 7" /></svg>
+            <span>Fieldmark</span>
+          </a>
+          <p class="footer__tag">Small groups. Local leaders. Walked before it is sold.</p>
+        </div>
+        <nav class="footer__cols" aria-label="Footer">
+          <div><h4 class="mono">Walk</h4><a href="#journeys">Journeys</a><a href="#places">Places</a><a href="#day">A day with us</a><a href="#reviews">Reviews</a></div>
+          <div><h4 class="mono">Company</h4><a href="#leaders">Leaders</a><a href="#notes">Field notes</a><a href="#why">About</a></div>
+          <div><h4 class="mono">Contact</h4><a href="mailto:hello@fieldmark.example">hello@fieldmark.example</a><a href="tel:+18025550147">+1 (802) 555-0147</a><span>Burlington, Vermont</span></div>
+        </nav>
+      </div>
+      <p class="footer__word" aria-hidden="true">Fieldmark</p>
+      <div class="footer__bottom mono">
+        <span>&copy; 2026 Fieldmark Journeys. A fictional brand.</span>
+        <span>Concept design by <a href="https://brandonfonville.com">Brandon Fonville Creative Studio</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
