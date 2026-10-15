@@ -634,6 +634,7 @@ const WORK_PREVIEWS = {
   ashfordvale: { src: "assets/work/av-home.png", caption: "Ashford Vale, Web" },
   harborglobal: { src: "assets/work/hg-home.png", caption: "Harbor Global, Web" },
   saltmarsh: { src: "assets/work/sm-home.png", caption: "Saltmarsh · Product Launch" },
+  ashgrove: { src: "assets/work/ag-home.jpg", caption: "Ashgrove, Web" },
 };
 
 function initPortfolio() {
@@ -736,8 +737,8 @@ const caseEls = {
   sub: document.getElementById("caseSub"),
   facts: document.getElementById("caseFacts"),
   gallery: document.getElementById("caseGallery"),
-  overview: document.getElementById("caseOverview"),
-  outcome: document.getElementById("caseOutcome"),
+  body: document.getElementById("caseBody"),
+  link: document.getElementById("caseLink"),
 };
 let lastFocused = null;
 
@@ -783,8 +784,30 @@ function openCaseStudy(id) {
         `<figure><img src="${img.src}" alt="${data.title}: ${img.caption}" loading="lazy" /><figcaption>${img.caption}</figcaption></figure>`
     )
     .join("");
-  caseEls.overview.textContent = data.overview;
-  caseEls.outcome.textContent = data.outcome;
+  if (caseEls.link) {
+    if (data.link && data.link.href) {
+      caseEls.link.href = data.link.href;
+      caseEls.link.querySelector("span").textContent = data.link.label || "View live project";
+      caseEls.link.hidden = false;
+    } else {
+      caseEls.link.hidden = true;
+    }
+  }
+  const esc = WorkStore.escapeHtml;
+  const blocks = [
+    { heading: "Role, team & overview", body: data.overview },
+    ...(data.sections || []),
+    { heading: data.outcomeHeading || "Problems faced & what was achieved", body: data.outcome },
+  ];
+  caseEls.body.innerHTML = blocks
+    .map((b) => {
+      const content = Array.isArray(b.list)
+        ? `<ul class="case-list">${b.list.map((li) => `<li>${esc(li)}</li>`).join("")}</ul>`
+        : `<p>${esc(b.body)}</p>`;
+      return `<div class="case-block"><h4>${esc(b.heading)}</h4>${content}</div>`;
+    })
+    .join("");
+  caseEls.body.classList.toggle("case-body-long", blocks.length > 2);
   lastFocused = document.activeElement;
   caseModal.classList.add("open");
   caseModal.setAttribute("aria-hidden", "false");
