@@ -131,8 +131,8 @@ p { margin: 0; }
 .route__fill { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--accent); }
 .route__knob { position: absolute; top: 13px; left: 0; width: 24px; height: 24px; margin-left: -12px; border-radius: 50%; background: var(--bone); box-shadow: 0 0 0 7px rgba(242,165,65,0.35); pointer-events: none; }
 .route__track:not(.is-dragging) .route__fill, .route__track:not(.is-dragging) .route__knob { transition: width 0.55s var(--ease), left 0.55s var(--ease); }
-.route__stops { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); }
-.route__stops li { position: relative; padding-top: 30px; }
+.route__stops { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.route__stops li { position: relative; padding-top: 30px; min-width: 0; }
 .route__stops li::before { content: ""; position: absolute; top: 7px; left: 0; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; border: 2px solid rgba(239,232,218,0.6); background: var(--ink); }
 .route__stops li.is-past::before { border-color: var(--accent); background: var(--accent); }
 .route__stops button { display: flex; flex-direction: column; gap: 4px; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; color: rgba(239,232,218,0.66); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
@@ -301,7 +301,7 @@ p { margin: 0; }
 @media (max-width: 1080px) {
   .nav__links { display: none; }
   .nav__cta { margin-left: auto; }
-  .hero { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: minmax(0, 1fr); }
   .stage-card { max-width: 460px; }
   .places__grid, .leaders__stage, .reviews__grid { grid-template-columns: 1fr; }
   .places__figure { display: none; }
