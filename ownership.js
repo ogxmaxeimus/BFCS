@@ -369,6 +369,7 @@ function renderMissingProjects() {
     halden: "Halden Build, concept",
     ashgrove: "Ashgrove Custom Homes, concept",
     fieldmark: "Fieldmark Journeys, concept",
+    natemcmillan: "Nate McMillan Foundation",
   };
 
   container.hidden = false;
@@ -397,6 +398,7 @@ function restoreProjectById(id) {
     halden: "Halden Build, concept",
     ashgrove: "Ashgrove Custom Homes, concept",
     fieldmark: "Fieldmark Journeys, concept",
+    natemcmillan: "Nate McMillan Foundation",
   };
   const label = labels[id] || id;
   if (!confirm(`Restore "${label}" to its original default content?`)) return;

@@ -790,6 +790,97 @@
         },
       ],
     },
+
+    {
+      id: "natemcmillan",
+      title: "Nate McMillan",
+      titleSub: "Foundation",
+      meta: "Nonprofit website, Raleigh",
+      tag: "Web",
+      caseStudy: {
+        eyebrow: "Case study: Web",
+        sub: "A photography-led site for a Raleigh foundation that mentors young men who have experienced fatherlessness.",
+        facts: [
+          { label: "Role", value: "Designer & Front-end Developer" },
+          { label: "Client", value: "Nate McMillan Foundation" },
+          { label: "Tools", value: "HTML, CSS, JavaScript, Netlify" },
+          { label: "Type", value: "Marketing website" },
+        ],
+        link: { href: "https://www.natemcmillanfoundation.org/", label: "View the live site" },
+        overview:
+          "The Nate McMillan Foundation is a Raleigh 501(c)(3) that mentors young men who have experienced fatherlessness. I designed and built the public site end to end: the visual system, the page structure, the copy layout, and a hand-built front end. The live site is natemcmillanfoundation.org.",
+        sections: [
+          {
+            heading: "The challenge",
+            body: "The foundation's story is personal, and the work is more than one program. Parents, donors, and partners arrive with different questions: what the camp is, who Nate is, how to give, and who already stands with the boys. The site had to feel serious and warm, lead with real photography, and make donate, camp, and getting involved obvious without looking like a generic nonprofit template.",
+          },
+          {
+            heading: "The approach",
+            body: "The homepage opens on the line Mentoring at its Finest, then states why the work exists. Nate's story, programs, camp, events, sponsors, and giving each have their own page, so someone can land on the thing they came for. Gold actions stay consistent: Donate, the interest form, and a path into the village of partners.",
+          },
+          {
+            heading: "Design system",
+            body: "Cream paper, a deep brown ground, and one gold accent. Sora carries both headlines and body, with large type set over photography from camp, events, and the boys themselves. The header stays quiet so the pictures and the ask can lead.",
+          },
+          {
+            heading: "Key pages",
+            list: [
+              "Homepage with a photo hero, Donate and Interest Form, and the fatherlessness statistics",
+              "Programs and Mentoring Camp, including who it is for and how to start",
+              "Nate's biography, the board, and Voices",
+              "Sponsors and partners, with a roster and a way to join",
+              "Events, gallery, get involved, and contact",
+              "A direct donate path, hosted as a static site on Netlify",
+            ],
+          },
+        ],
+        outcomeHeading: "Outcome",
+        outcome:
+          "The foundation has a live site that carries the weight of the mission and a clear next step: give, apply for camp, or partner. Photography does the proof. The structure keeps camp, story, sponsors, and giving from competing on one long page.",
+      },
+      items: [
+        {
+          category: "Digital",
+          src: "assets/work/nmf-home.png",
+          webp: "",
+          alt: "Nate McMillan Foundation homepage with Mentoring at its Finest over a photo of young men at a podium",
+          width: 1440,
+          height: 900,
+          title: "Homepage",
+          span: "Web • brand",
+        },
+        {
+          category: "Digital",
+          src: "assets/work/nmf-programs.png",
+          webp: "",
+          alt: "Nate McMillan Foundation programs page, Camp is the door, the year is the work",
+          width: 1440,
+          height: 900,
+          title: "Programs",
+          span: "Web • IA",
+        },
+        {
+          category: "Digital",
+          src: "assets/work/nmf-camp.png",
+          webp: "",
+          alt: "Nate McMillan Foundation Mentoring Camp page, Four days that shape a lifetime",
+          width: 1440,
+          height: 900,
+          title: "Mentoring Camp",
+          span: "Web • program",
+        },
+        {
+          category: "Digital",
+          src: "assets/work/nmf-sponsors.png",
+          webp: "",
+          alt: "Nate McMillan Foundation sponsors page, It takes a village, with partner names",
+          width: 1440,
+          height: 900,
+          title: "Sponsors",
+          span: "Web • partners",
+        },
+      ],
+    },
   ];
 
   function clone(value) {

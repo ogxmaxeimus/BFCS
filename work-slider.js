@@ -94,6 +94,12 @@
       webp: "assets/work/fm-home.webp",
       alt: "Fieldmark Journeys small-group tour operator website concept",
     },
+    natemcmillan: {
+      color: "#120b08",
+      src: "assets/work/nmf-home.png",
+      webp: "",
+      alt: "Nate McMillan Foundation homepage",
+    },
   };
 
   const AUTOPLAY_DELAY = 5000;
