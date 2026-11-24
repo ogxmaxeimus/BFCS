@@ -96,7 +96,7 @@
     },
     natemcmillan: {
       color: "#120b08",
-      src: "assets/work/nmf-home.png",
+      src: "assets/work/nmf-home.jpg",
       webp: "",
       alt: "Nate McMillan Foundation homepage",
     },

@@ -637,7 +637,7 @@ const WORK_PREVIEWS = {
   halden: { src: "assets/work/hb-home.png", caption: "Halden, Web concept" },
   ashgrove: { src: "assets/work/ag-home.jpg", caption: "Ashgrove, Web" },
   fieldmark: { src: "assets/work/fm-home.jpg", caption: "Fieldmark, Web" },
-  natemcmillan: { src: "assets/work/nmf-home.png", caption: "Nate McMillan Foundation, Web" },
+  natemcmillan: { src: "assets/work/nmf-home.jpg", caption: "Nate McMillan Foundation, Web" },
 };
 
 function initPortfolio() {
@@ -648,6 +648,12 @@ function initPortfolio() {
     missing.forEach((id) => {
       data = WorkStore.restoreProject(data, id);
     });
+    WorkStore.save(data);
+  }
+  const nmf = data.projects.find((project) => project.id === "natemcmillan");
+  const nmfSrcs = ((nmf && nmf.items) || []).map((item) => item.src);
+  if (nmf && !nmfSrcs.includes("assets/work/nmf-moms.jpg")) {
+    data = WorkStore.restoreProject(data, "natemcmillan");
     WorkStore.save(data);
   }
   caseStudies = WorkStore.buildCaseStudies(data.projects);
